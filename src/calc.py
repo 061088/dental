@@ -1,3 +1,5 @@
+
+#this adds two values x + y
 def add(x,y):
 	return x+y
 
