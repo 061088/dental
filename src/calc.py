@@ -1,7 +1,7 @@
 def add(x,y):
 	return x+y
 
-
+#this takes to values and returns the sum of y subtracted from x
 def subtract(x,y):
 	return x-y
 
