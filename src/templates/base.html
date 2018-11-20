@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "head.html" %}
+
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPPVX3F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% include "nav.html" %}
+{% block messages %}
+    
+    {% if messages %}
+
+    <div class="container text-center">
+    <div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {% for message in messages %}
+    <h4{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h4>
+    {% endfor %} 
+    </div>
+    </div>
+
+
+
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+{% include "footer.html" %}
+{% include "js.html" %}
+</body>
+</html>

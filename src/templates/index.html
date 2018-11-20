@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<div class="col-sm-12 text-center">
+
+<h1>Your Milton Keynes Dentist</h1>
+
+
+{% if not request.user_agent.is_mobile %}
+<img class="home-image" src="{% static 'img/mk-dental-spa-home-pic.jpg' %}"/>
+{% endif %}
+
+{% if request.user_agent.is_mobile %}
+<div class="col-sm-12 text-center">
+<ul class="mobile-options">
+<li><a href="">
+<button class="btn btn-warning">
+Book Appointment
+</button>
+</a>
+</li>
+
+<li>
+<a href="">
+<button class="btn btn-warning">
+Fees
+</button>
+</a>
+</li>
+
+</ul>
+</div>
+{% endif %}
+</div>
+
+
+<div class="col-sm-12 text-center">
+
+{% for object in object_list %}
+
+<h2>{{object.title }}</h2>
+{{ object.text| safe }}
+{% endfor %}
+
+
+</div>
+
+{% endblock %}
